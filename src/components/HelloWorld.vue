@@ -1,5 +1,5 @@
 <template>
-  <h1>Lets learn vue 3 and laravel 11 side by side.</h1>
+  <h1>Showing the relation of between main.js and index.html files ( the starter files )</h1>
 </template>
 <script>
 export default {
