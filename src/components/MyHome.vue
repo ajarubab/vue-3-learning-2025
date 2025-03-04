@@ -1,31 +1,41 @@
 <template>
-    <h1>MyHome Component</h1>
-    <h1>20 + 15 = {{ 20+15 }}</h1>
-    <h1>The word "asfjhaskhgbalejgklgh" has {{ "asfjhaskhgbalejgklgh".length }} Characters.</h1>
-    <h1>{{ naam }} is of {{ Age }} years old and lives in {{ getCountry() }}</h1>
-    <h1>{{ naam1 = "Ramu" }} is of {{ Age1 = 34 }} years old and lives in {{ getState("Nepal") }}</h1>
+    <h1>My Home Component</h1>
+    <h1>{{ Name }}</h1>
+    <h1>{{ getName() }}</h1>
+    <h1>{{ getCountry("India") }}</h1>
+    <h2>Other Data : {{ getData() }}</h2>
+    <h2>Other Data State: {{ getData().State }}</h2>
+    <h2>State: {{ getState() }}</h2>
+    <h2>Age: {{ getAge() }}</h2>
 </template>
 <script>
-export default {
-    name: 'MyHome',
+export default{
+    name : 'MyHome',
     data(){
         return{
-            naam : "Raja kumar",
-            naam1 : "",
+            Name : 'Rajat Kumar',
             Age : 28,
-            Age1 : 28,
-            getCountry : function(){
-                return "India";
-            },
-            getState : function(a){
-            return a;
-            },
+        }
+    },
+    methods : {
+        getName(){
+            return "Radhe Radhe";
+        },
+        getCountry(c){
+            return c;
+        },
+        getData(){
+            return{
+                State : "Delhi",
+                Email : "Raja@kumar.in"
+            }
+        },
+        getState(){
+            return this.getData().Email;
+        },
+        getAge(){
+            return this.Age;
         }
     }
 }
 </script>
-<style scoped>
-h1{
-    color:blue;
-}
-</style>
