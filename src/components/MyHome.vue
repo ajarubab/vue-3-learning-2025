@@ -1,47 +1,23 @@
 <template>
-    <h1> USE OF FOR LOOP AND WHILE LOOP</h1>
-    <ul>
-        <li v-for="x in color" :key="x">
-            {{ x }}
+    <h1> My Home</h1>
+    <ol>
+        <li v-for="x in user" :key="x.name">
+            Name : {{ x.name }}, Age : {{ x.age }}
         </li>
-        <br>
-        <li v-for="y in firstTable" :key="y">
-            {{ y }}
-        </li>
-        <br>
-        <li v-for="z in secondTable" :key="z">
-            {{ z }}
-        </li>
-    </ul>
-    
+    </ol>
 </template>
 <script>
     export default {
         name : 'MyHome',
         data(){
             return{
-                color : ['Red','Black','Blue','Green'],
-                firstTable : this.getTableOf(5),
-                secondTable : this.getAnotherTable(12),
-            }
-        },
-        methods:{
-            getTableOf(n){
-                let res = [];
-                for(let m = 1; m<= 10; m++){
-                    res.push(n*m);
-                }
-                return res;
-                
-            },
-            getAnotherTable(n){
-                let res = [];
-                let m = 1;
-                while(m<11){
-                    res.push(n*m);
-                    m++;
-                }
-                return res;
+                user : [
+                    {name: 'raja', age : 23},
+                    {name: 'raju', age : 21},
+                    {name: 'rajan', age : 28},
+                    {name: 'rajat', age : 22},
+                    {name: 'rajesh', age : 52},
+                ],
             }
         }
     }
