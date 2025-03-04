@@ -1,23 +1,22 @@
 <template>
-    <h1> My Home Component</h1>
-    <input type="text"  placeholder="Enter username" v-model="username"><br><br>
-    <input type="password" placeholder="Enter Password" v-model="password"><br><br>
-    <button v-on:click="userDetails()">Submit</button>
-    
+    <h1>Color</h1>
+    <label for="black">Black</label>
+    <input type="checkbox" id="black" value="Black" v-model="color"> <br><br>
+    <label for="red">Red</label>
+    <input type="checkbox" id="red" value="Red" v-model="color"> <br><br>
+    <label for="green">Green</label>
+    <input type="checkbox" id="green" value="Green" v-model="color"><br><br>
+    <label for="blue">Blue</label>
+    <input type="checkbox" id="blue" value="Blue" v-model="color"><br><br>
+    <h2>Opted Color are : {{ color }}</h2>    
 </template>
 <script>
     export default {
         name : 'MyHome',
         data(){
             return{
-                username : null,
-                password : null,
+                color : []
             }
-        },
-        methods:{
-            userDetails(){
-                console.log("Username : ",this.username,"\nPassword : ",this.password);
-            }
-        },
+        }
     }
 </script>
